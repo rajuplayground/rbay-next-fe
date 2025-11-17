@@ -44,7 +44,7 @@ export default function Header() {
 
 	if (loading) {
 		return (
-			<div className="w-full p-2 shadow-xs bg-amber-500 mb-8">
+			<div className="w-full p-2 shadow-sm bg-amber-500 mb-8">
 				<div className="container mx-auto flex flex-row items-center justify-between">
 					<Link href="/">
 						<div className="ml-8 text-lg text-white flex">RBay</div>

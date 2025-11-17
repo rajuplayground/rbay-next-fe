@@ -52,7 +52,7 @@ export default function SignInPage() {
 			<div className="self-center mb-2 text-xl font-light text-gray-800 sm:text-2xl dark:text-white">
 				Sign In
 			</div>
-			<span className="justify-center text-sm text-center text-gray-500 flex-items-center dark:text-gray-400">
+			<span className="justify-center text-sm text-center text-gray-500 flex items-center dark:text-gray-400">
 				Don&apos;t have an account ?{' '}
 				<Link href="/auth/signup" className="text-sm text-blue-500 underline hover:text-blue-700">
 					Sign up
@@ -65,7 +65,7 @@ export default function SignInPage() {
 							<input
 								type="text"
 								id="create-account-pseudo"
-								className="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+								className="rounded-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
 								name="username"
 								placeholder="User Name"
 								value={username}
@@ -79,7 +79,7 @@ export default function SignInPage() {
 							<input
 								type="password"
 								id="password"
-								className="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+								className="rounded-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
 								placeholder="Password"
 								value={password}
 								onChange={(e) => setPassword(e.target.value)}
