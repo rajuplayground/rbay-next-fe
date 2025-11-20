@@ -3,6 +3,7 @@ import { headers } from 'next/headers';
 import { notFound } from 'next/navigation';
 
 import BidForm from './BidForm';
+import LikeButton from './LikeButton';
 import { API_BASE_URL } from '@/src/lib/config/api';
 
 interface Item {
@@ -27,6 +28,7 @@ interface BidHistoryPoint {
 interface ItemResponse {
 	item: Item;
 	userHasHighBid?: boolean;
+	userLikes?: boolean;
 	history?: BidHistoryPoint[];
 	similarItems?: Item[];
 }
@@ -168,13 +170,14 @@ export default async function ItemDetailPage({ params }: { params: Promise<{ id:
 
 				<div className="flex flex-1 flex-col gap-6">
 					<div className="flex flex-col gap-4">
-						<div className="flex items-center justify-between gap-4">
+						<div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 							<h1 className="text-3xl font-semibold text-gray-900">{data.item.name}</h1>
 
-							<div className="flex items-center gap-2 rounded-full bg-rose-50 px-4 py-2 text-rose-600 font-semibold">
-								<span>{data.item.likes ?? 0}</span>
-								<span>Likes</span>
-							</div>
+							<LikeButton
+								itemId={data.item.id}
+								initialLikes={data.item.likes ?? 0}
+								initialUserLikes={Boolean(data.userLikes)}
+							/>
 						</div>
 
 						<Link
